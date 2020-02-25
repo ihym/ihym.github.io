@@ -5,8 +5,8 @@ let height = window.innerHeight;
 
 function config() {
   return {
-    width: width,
-    height: height,
+    width: width + 20,
+    height: height + 20,
     variance: Math.random(),
     cell_size: window.innerWidth / 50 + Math.random() * 100,
     x_colors: 'random',
