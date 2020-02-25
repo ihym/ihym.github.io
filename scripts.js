@@ -28,8 +28,9 @@ function handleResize(e) {
 document.addEventListener('click', function() {
   Trianglify(config()).canvas(canvas);
 });
-document.addEventListener('touchstart', function() {
-  Trianglify(config()).canvas(canvas);
+
+document.querySelector('.content').addEventListener('click', function(e) {
+  e.stopPropagation();
 });
 
 Trianglify(Object.assign({}, config(), {x_colors: 'RdBu', cell_size: window.innerWidth / 40})).canvas(canvas);
