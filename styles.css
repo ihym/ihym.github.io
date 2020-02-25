@@ -1,0 +1,84 @@
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+a:hover {
+  color: #ff5722;
+}
+
+.canvas-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #99C8DF;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10%;
+  padding: 2rem;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.13);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.13);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.13);
+}
+
+.content > p:last-child {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #999;
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: .12em;
+  margin-bottom: 30px;
+  left: 3px;
+}
+
+.profile-wrapper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+  -webkit-box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.75);
+}
+
+.profile {
+  width: 200px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
