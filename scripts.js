@@ -1,38 +1,34 @@
 const canvas = document.querySelector('canvas');
-let resizeTimer = null;
-let width = window.innerWidth;
-let height = window.innerHeight;
+const content = document.querySelector('.content');
+let timer = null;
 
-function config() {
+function config(initial) {
   return {
-    width: width,
-    height: height,
+    width: window.innerWidth,
+    height: window.innerHeight,
     variance: Math.random(),
-    cell_size: window.innerWidth / 50 + Math.random() * 100,
-    x_colors: 'random',
+    cell_size: window.innerWidth / 50 + (initial ? 0 : Math.random() * 100),
+    x_colors: initial ? 'RdBu' : 'random',
     seed: Math.random(),
   };
 }
 
-function debounceResize() {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(handleResize, 100);
+function debounceTrianglify() {
+  clearTimeout(timer);
+  timer = setTimeout(trianglify, 100);
 }
 
-function handleResize(e) {
-  width = window.innerWidth;
-  height = window.innerHeight;
-  Trianglify(config()).canvas(canvas);
+function trianglify(initial) {
+  Trianglify(config(initial)).canvas(canvas);
 }
 
 document.addEventListener('click', function() {
-  Trianglify(config()).canvas(canvas);
+  trianglify();
 });
 
-document.querySelector('.content').addEventListener('click', function(e) {
+content.addEventListener('click', function(e) {
   e.stopPropagation();
 });
 
-Trianglify(Object.assign({}, config(), {x_colors: 'RdBu', cell_size: window.innerWidth / 40})).canvas(canvas);
-
-window.addEventListener('resize', debounceResize);
+trianglify(true);
+window.addEventListener('resize', debounceTrianglify);
