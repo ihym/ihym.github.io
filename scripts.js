@@ -7,8 +7,8 @@ function config(initial) {
     width: window.innerWidth,
     height: window.innerHeight,
     variance: Math.random(),
-    cell_size: window.innerWidth / 50 + (initial ? 0 : Math.random() * 100),
-    x_colors: initial ? 'RdBu' : 'random',
+    cell_size: window.innerWidth / 50 + (initial ? 40 : Math.random() * 100),
+    x_colors: initial ? 'RdYlBu' : 'random',
     seed: Math.random(),
   };
 }
